@@ -1,4 +1,4 @@
-package dev.task.web.DTO;
+package dev.api.web.DTO;
 
 import lombok.*;
 

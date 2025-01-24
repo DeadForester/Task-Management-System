@@ -1,9 +1,7 @@
-package dev.task.entity;
+package dev.api.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.List;
 
 @Getter
 @Setter
