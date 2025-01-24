@@ -1,6 +1,6 @@
 package dev.task.repository;
 
-import dev.task.entity.User;
+import dev.task.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

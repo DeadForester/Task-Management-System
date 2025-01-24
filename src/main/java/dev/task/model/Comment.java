@@ -1,4 +1,4 @@
-package dev.task.entity;
+package dev.task.model;
 
 import lombok.Data;
 

@@ -1,7 +1,4 @@
-package dev.task.entity;
-
-import jakarta.persistence.*;
-import lombok.*;
+package dev.task.model;
 
 //@Getter
 //@Setter
