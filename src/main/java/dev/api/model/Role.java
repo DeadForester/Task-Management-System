@@ -1,5 +1,3 @@
-package dev.api.model;
-
 //@Getter
 //@Setter
 //@AllArgsConstructor

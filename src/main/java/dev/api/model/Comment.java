@@ -2,6 +2,7 @@ package dev.api.model;
 
 import lombok.Data;
 
+
 @Data
 public class Comment {
 
