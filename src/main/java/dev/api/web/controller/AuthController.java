@@ -1,18 +1,10 @@
 package dev.api.web.controller;
 
-import dev.api.exception.AppError;
-import dev.api.services.UserService;
-import dev.api.util.JwtTokenUtils;
+import dev.api.services.AuthService;
 import dev.api.web.DTO.JwtRequest;
-import dev.api.web.DTO.JwtResponse;
+import dev.api.web.DTO.RegistrationUserDTO;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,19 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 public class AuthController {
-    private final UserService userService;
-    private final JwtTokenUtils jwtTokenUtils;
-    private final AuthenticationManager authenticationManager;
+    private final AuthService authService;
 
     @PostMapping("/auth")
-    public ResponseEntity<?> createAuthToken(@RequestBody JwtRequest authRequest){
-        try {
-            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(),authRequest.getPassword()));
-        } catch (BadCredentialsException e) {
-            return new ResponseEntity<>(new AppError(HttpStatus.UNAUTHORIZED.value(), "Некорректный логин или пароль"),HttpStatus.UNAUTHORIZED);
-        }
-        UserDetails userDetails = userService.loadUserByUsername(authRequest.getUsername());
-        String token = jwtTokenUtils.generateToken(userDetails);
-        return ResponseEntity.ok(new JwtResponse(token));
+    public ResponseEntity<?> createAuthToken(@RequestBody JwtRequest authRequest) {
+        return authService.createAuthToken(authRequest);
+    }
+
+    @PostMapping("/registration")
+    public ResponseEntity<?> createNewUser(@RequestBody RegistrationUserDTO registrationUserDTO) {
+        return authService.createNewUser(registrationUserDTO);
     }
 }

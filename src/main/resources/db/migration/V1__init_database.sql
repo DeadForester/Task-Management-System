@@ -2,7 +2,7 @@ CREATE TABLE if not exists users
 (
     id       BIGSERIAL PRIMARY KEY,
     username VARCHAR(30) NOT NULL UNIQUE,
-    password VARCHAR(30) NOT NULL,
+    password VARCHAR(100) NOT NULL,
     email    VARCHAR(30) UNIQUE
 );
 
@@ -11,8 +11,7 @@ CREATE TABLE if not exists roles
     id   SERIAL PRIMARY KEY,
     name VARCHAR(30) NOT NULL
 );
-
-create table if not exists users_roles
+CREATE TABLE if not exists users_roles
 (
     user_id bigint not null,
     role_id int    not null,

@@ -42,14 +42,13 @@ public class JwtTokenUtils {
                 .compact();
     }
 
-    public String getUserName(String token){
+    public String getEmail(String token) {
         return getAllClaimsFormToken(token).getSubject();
     }
 
-    public List<String> getRoles(String token){
-        return getAllClaimsFormToken(token).get("roles",List.class);
+    public List<String> getRoles(String token) {
+        return getAllClaimsFormToken(token).get("roles", List.class);
     }
-
 
 
     private Claims getAllClaimsFormToken(String token) {

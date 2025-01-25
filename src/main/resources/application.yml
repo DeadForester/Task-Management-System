@@ -1,6 +1,11 @@
+server:
+  servlet:
+    context-path: /api
+
+
 jwt:
-  secret: 92374JGJHG9837729374HH732
-  lifetime: 30m
+  secret: 984hg493gh0439rthr0429uruj2309yh937gc763fe87t3f89723gf
+  lifetime: 10m
 
 spring:
   datasource:
@@ -11,8 +16,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: none
-    show-sql: true
+      ddl-auto: validate
     properties:
       hibernate:
         format_sql: true
@@ -24,10 +28,5 @@ spring:
     enabled: true
     baseline-description: "init"
     baseline-version: 1
-    repair-on-migrate: true
-    validate-on-migrate: false
-logging:
-  level:
-    org.flywaydb: DEBUG
 
 
