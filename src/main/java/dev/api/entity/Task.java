@@ -1,4 +1,4 @@
-package dev.api.model;
+package dev.api.entity;
 
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;

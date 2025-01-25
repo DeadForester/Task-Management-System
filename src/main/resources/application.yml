@@ -1,6 +1,6 @@
 server:
   servlet:
-    context-path: /api/tasks
+    context-path: /api
 
 jwt:
   secret: 92374JGJHG9837729374HH732
@@ -15,4 +15,6 @@ spring:
     show-sql: true
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.Pos
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+          auto: create

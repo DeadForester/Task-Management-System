@@ -12,12 +12,11 @@ create table roles
     name varchar(30) not null
 );
 
-create table users_role
+create table users_roles
 (
     user_id bigint not null,
     role_id in not null
 );
-
 
 insert into roles (name)
 values ('ROLE_USER'),
@@ -30,6 +29,9 @@ values ('user', '123456', 'user@mail.ru'),
 insert into users_role (user_id, role_id)
 values
     (1, 1), (2, 2);
+
+
+
 
 
 
