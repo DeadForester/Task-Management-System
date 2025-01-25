@@ -11,6 +11,9 @@ spring:
     url: jdbc:postgresql://localhost:5432/task_management_system
     username: bestuser
     password: bestuser
+  flyway:
+    enabled:
+    locations: classpath:db/migration
   jpa:
     show-sql: true
     properties:

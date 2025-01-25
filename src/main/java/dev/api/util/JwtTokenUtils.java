@@ -52,8 +52,6 @@ public class JwtTokenUtils {
 
 
 
-
-
     private Claims getAllClaimsFormToken(String token) {
         return Jwts.parserBuilder()
                 .setSigningKey(secret)
