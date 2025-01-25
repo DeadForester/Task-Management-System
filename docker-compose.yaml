@@ -1,14 +1,14 @@
-version: "3.9"
-services:
-  postgres:
-    image: 'postgres:17.1'
-    environment:
-      - 'POSTGRES_DB=task_management_system'
-      - 'POSTGRES_PASSWORD=bestuser'
-      - 'POSTGRES_USER=bestuser'
-    ports:
-      - "5432:5432"
-#  redis:
-#    image: 'redis:latest'
+#version: "3.9"
+#services:
+#  postgres:
+#    image: 'postgres:17.1'
+#    environment:
+#      - 'POSTGRES_DB=task_management_system'
+#      - 'POSTGRES_PASSWORD=bestuser'
+#      - 'POSTGRES_USER=bestuser'
 #    ports:
-#      - '6379'
+#      - "5432:5432"
+##  redis:
+##    image: 'redis:latest'
+##    ports:
+##      - '6379'
