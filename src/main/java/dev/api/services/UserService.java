@@ -23,10 +23,6 @@ public class UserService implements UserDetailsService {
     private final RoleService roleService;
     private final PasswordEncoder passwordEncoder;
 
-    public Optional<User> findByUsername(String email) {
-        return userRepository.findByEmail(email);
-    }
-
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

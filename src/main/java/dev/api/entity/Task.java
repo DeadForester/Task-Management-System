@@ -1,28 +1,36 @@
 package dev.api.entity;
 
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import lombok.Data;
+import dev.api.enums.Priority;
+import dev.api.enums.Status;
+import jakarta.persistence.*;
+import lombok.*;
 
-@Data
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Table(name = "tasks")
 public class Task {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "heading")
     private String heading;
+
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "status")
     @Enumerated(EnumType.STRING)
-    private TaskStatus status;
+    private Status status;
+
+    @Column(name = "priority")
     @Enumerated(EnumType.STRING)
-    private TaskPriority priority;
-
-
-    private enum TaskStatus {
-        WAITING, IN_PROGRESS, COMPLETED
-    }
-
-    private enum TaskPriority {
-        HIGH, MEDIUM, LOW
-    }
-
+    private Priority priority;
 
 }
