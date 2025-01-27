@@ -1,4 +1,4 @@
-package dev.api.web.controller.taskController;
+package dev.api.web.controller.task;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

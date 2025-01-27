@@ -1,8 +1,8 @@
 package dev.api.web.controller;
 
 import dev.api.services.AuthService;
-import dev.api.web.DTO.JwtRequest;
-import dev.api.web.DTO.RegistrationUserDTO;
+import dev.api.web.dto.JwtRequest;
+import dev.api.web.dto.RegistrationUserDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

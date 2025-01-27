@@ -2,11 +2,11 @@ package dev.api.services;
 
 import dev.api.entity.User;
 import dev.api.exception.AppError;
-import dev.api.util.JwtTokenUtils;
-import dev.api.web.DTO.JwtRequest;
-import dev.api.web.DTO.JwtResponse;
-import dev.api.web.DTO.RegistrationUserDTO;
-import dev.api.web.DTO.UserDTO;
+import dev.api.security.JwtTokenUtils;
+import dev.api.web.dto.JwtRequest;
+import dev.api.web.dto.JwtResponse;
+import dev.api.web.dto.RegistrationUserDTO;
+import dev.api.web.dto.UserDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

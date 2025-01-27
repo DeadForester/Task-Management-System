@@ -1,7 +1,8 @@
-package dev.api.web.controller.taskController;
+package dev.api.web.controller.task;
 
 import dev.api.entity.Task;
 import dev.api.services.TaskServices;
+import dev.api.web.dto.TaskDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,13 +27,13 @@ public class AdminTaskController {
     }
 
     @PostMapping
-    public ResponseEntity<Task> addNewTask(@RequestBody Task task) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(taskServices.addNewTask(task));
+    public ResponseEntity<Task> addNewTask(@RequestBody TaskDTO taskDTO) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(taskServices.addNewTask(taskDTO));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Task> updateTask(@PathVariable Long id, @RequestBody Task task) {
-        return ResponseEntity.ok(taskServices.updateTask(id, task));
+    public ResponseEntity<Task> updateTask(@PathVariable Long id, @RequestBody TaskDTO taskDTO) {
+        return ResponseEntity.ok(taskServices.updateTask(id, taskDTO));
     }
 
     @DeleteMapping("/{id}")

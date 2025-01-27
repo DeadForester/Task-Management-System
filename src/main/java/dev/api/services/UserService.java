@@ -2,7 +2,7 @@ package dev.api.services;
 
 import dev.api.entity.User;
 import dev.api.repository.UserRepository;
-import dev.api.web.DTO.RegistrationUserDTO;
+import dev.api.web.dto.RegistrationUserDTO;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

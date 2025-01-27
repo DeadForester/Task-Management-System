@@ -4,6 +4,7 @@ CREATE TABLE if not exists users
     username VARCHAR(30)  NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL,
     email    VARCHAR(30) UNIQUE
+
 );
 
 CREATE TABLE if not exists roles
@@ -20,11 +21,20 @@ CREATE TABLE if not exists users_roles
 );
 
 
-CREATE TABLE tasks
+CREATE TABLE if not exists tasks
 (
     id          BIGSERIAL PRIMARY KEY,
     heading     VARCHAR(255) NOT NULL,
     description VARCHAR(4096),
-    status      VARCHAR(30),
-    priority    VARCHAR(30)
+    status      VARCHAR(30)  NOT NULL,
+    priority    VARCHAR(30)  NOT NULL
 );
+
+CREATE TABLE if not exists tasks_users
+(
+    user_id BIGSERIAL not null,
+    task_id BIGSERIAL not null,
+    foreign key (user_id) references users (id),
+    foreign key (task_id) references tasks (id)
+);
+

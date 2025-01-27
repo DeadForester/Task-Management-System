@@ -2,8 +2,12 @@ package dev.api.entity;
 
 import dev.api.enums.Priority;
 import dev.api.enums.Status;
+import dev.api.web.dto.UserDTO;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -32,5 +36,14 @@ public class Task {
     @Column(name = "priority")
     @Enumerated(EnumType.STRING)
     private Priority priority;
+
+
+    @ManyToMany
+    @JoinTable(
+            name = "tasks_users",
+            joinColumns = @JoinColumn(name = "task_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
+    private Set<User> users = new HashSet<>();
 
 }

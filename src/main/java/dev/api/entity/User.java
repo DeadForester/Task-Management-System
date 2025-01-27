@@ -3,7 +3,9 @@ package dev.api.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -34,4 +36,7 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private List<Role> roles;
+
+//    @ManyToMany(mappedBy = "users")
+//    private Set<Task> tasks = new HashSet<>();
 }

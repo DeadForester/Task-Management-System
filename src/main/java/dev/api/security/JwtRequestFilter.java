@@ -1,6 +1,5 @@
-package dev.api.components;
+package dev.api.security;
 
-import dev.api.util.JwtTokenUtils;
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
