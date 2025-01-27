@@ -1,8 +1,8 @@
 package dev.api.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import dev.api.enums.Priority;
 import dev.api.enums.Status;
-import dev.api.web.dto.UserDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -45,5 +45,8 @@ public class Task {
             inverseJoinColumns = @JoinColumn(name = "user_id")
     )
     private Set<User> users = new HashSet<>();
+
+    @OneToMany(mappedBy = "task")
+    private Set<Comment> comments = new HashSet<>();
 
 }

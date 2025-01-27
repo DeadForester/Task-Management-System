@@ -17,11 +17,11 @@ public class AdminTaskController {
     private final TaskServices taskServices;
 
     @GetMapping("/tasks")
-    public ResponseEntity<List<Task>> findAllTask() {
+    public ResponseEntity<List<TaskDTO>> findAllTask() {
         return ResponseEntity.ok(taskServices.findAllTask());
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/tasks/{id}")
     public ResponseEntity<Task> findByIdTask(@PathVariable Long id) {
         return ResponseEntity.ok(taskServices.findByIdTask(id));
     }

@@ -30,6 +30,18 @@ CREATE TABLE if not exists tasks
     priority    VARCHAR(30)  NOT NULL
 );
 
+CREATE table if not exists comments
+(
+    id       BIGSERIAL PRIMARY KEY,
+    text     varchar(4096) not null,
+    tasks_id BIGSERIAL,
+    user_id  BIGSERIAL,
+    foreign key (tasks_id) references tasks (id),
+    foreign key (user_id) references users (id)
+);
+
+
+
 CREATE TABLE if not exists tasks_users
 (
     user_id BIGSERIAL not null,
