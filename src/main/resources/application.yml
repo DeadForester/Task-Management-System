@@ -2,17 +2,17 @@ server:
   servlet:
     context-path: /api
 
-
-jwt:
-  secret: 984hg493gh0439rthr0429uruj2309yh937gc763fe87t3f89723gf
-  lifetime: 10m
-
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5433/task_management_system
     driver-class-name: org.postgresql.Driver
     username: bestuser
     password: bestuser
+jwt:
+  secret: 984hg493gh0439rthr0429uruj2309yh937gc763fe87t3f89723gf
+  lifetime: 10m
+
+
 
   jpa:
     hibernate:

@@ -10,6 +10,7 @@ values ('ROLE_USER'),
 
 
 
+
 insert into tasks(heading, description, status, priority)
 values ('Выполнить важное поручение!', 'Необходимо предоставить отчёт за последний месяц о сотрудниках', 'ACCEPTED',
         'HIGH'),
@@ -29,6 +30,15 @@ values (1,1),
        (2,1),
        (3,2),
        (4,2);
+
+insert into comments(text,tasks_id,user_id)
+values ('Скоро выполню',1,1),
+       ('Скоро будет готово!',2,3),
+       ('Необходимо выполнить задачу быстрее',2,2);
+
+
+
+
 
 
 
