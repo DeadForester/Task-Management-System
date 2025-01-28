@@ -1,8 +1,7 @@
 package dev.api.services;
 
+import dev.api.converter.TaskConverter;
 import dev.api.entity.Task;
-import dev.api.enums.Priority;
-import dev.api.enums.Status;
 import dev.api.repository.TaskRepository;
 import dev.api.web.dto.TaskDTO;
 import lombok.RequiredArgsConstructor;
@@ -15,11 +14,25 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class TaskService {
-
     private final TaskRepository taskRepository;
 
-    public List<Task> findAllTasks(){
-        return taskRepository.findAll();
+    private final TaskConverter taskConverter;
+
+    public List<TaskDTO> findAllTasks() {
+        return taskRepository.findAll().stream().map(taskConverter::convertTaskToTaskDTO).toList();
+    }
+
+    public TaskDTO findTaskById(Long id) {
+        return taskConverter.convertTaskToTaskDTO(
+                taskRepository.findById(id).
+                        orElseThrow(() -> new IllegalArgumentException("Задачи с ID: " + id + " не существует!"))
+        );
+    }
+
+    public TaskDTO createNewTask(TaskDTO taskDTO){
+        Task task = taskConverter.convertTaskDTOToTask(taskDTO);
+        taskRepository.save(task);
+        return taskDTO;
     }
 
 }

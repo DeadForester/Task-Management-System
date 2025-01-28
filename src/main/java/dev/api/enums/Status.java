@@ -1,8 +1,10 @@
 package dev.api.enums;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
+@AllArgsConstructor
 public enum Status {
     CANCELLED(0),
     COMPLETED(1),
@@ -12,9 +14,6 @@ public enum Status {
 
     private final int id;
 
-    Status(int id) {
-        this.id = id;
-    }
 
     public static Status getStatus(int id) {
         for (Status status : Status.values()) {
@@ -24,4 +23,9 @@ public enum Status {
         }
         throw new IllegalArgumentException("Статус с ID: " + id + " не найден");
     }
+
+    public static int getId(Status status) {
+        return status.getId();
+    }
+
 }

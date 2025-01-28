@@ -12,12 +12,12 @@ public class CommentConverter {
 
     private final ModelMapper modelMapper;
 
-    private CommentDTO convertCommentToCommentDTO(Comment comment) {
+    public CommentDTO convertCommentToCommentDTO(Comment comment) {
         CommentDTO commentDTO = modelMapper.map(comment, CommentDTO.class);
         return commentDTO;
     }
 
-    private Comment convertCommentDTOToComment(CommentDTO commentDTO) {
+    public Comment convertCommentDTOToComment(CommentDTO commentDTO) {
         Comment comment = modelMapper.map(commentDTO, Comment.class);
         return comment;
     }
