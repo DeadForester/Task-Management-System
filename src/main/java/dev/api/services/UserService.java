@@ -23,6 +23,7 @@ public class UserService implements UserDetailsService {
     private final RoleService roleService;
     private final PasswordEncoder passwordEncoder;
 
+
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

@@ -1,4 +1,4 @@
-package dev.api.security;
+package dev.api.utils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
