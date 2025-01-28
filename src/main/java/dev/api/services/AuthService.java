@@ -2,7 +2,7 @@ package dev.api.services;
 
 import dev.api.entity.User;
 import dev.api.exception.AppError;
-import dev.api.security.JwtTokenUtils;
+import dev.api.utils.JwtTokenUtils;
 import dev.api.web.dto.JwtRequest;
 import dev.api.web.dto.JwtResponse;
 import dev.api.web.dto.RegistrationUserDTO;
