@@ -1,7 +1,7 @@
 package dev.api.web.controller;
 
-import dev.api.services.TaskServices;
-import dev.api.web.dto.TaskDTO;
+import dev.api.entity.Task;
+import dev.api.services.TaskService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -16,10 +16,10 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class AdminController {
-    private final TaskServices taskServices;
+    private final TaskService taskService;
 
     @GetMapping("/tasks")
-    public ResponseEntity<List<TaskDTO>> findAllTask() {
-        return ResponseEntity.ok(taskServices.findAllTask());
+    public ResponseEntity<List<Task>> findAllTask() {
+        return ResponseEntity.ok(taskService.findAllTasks());
     }
 }
