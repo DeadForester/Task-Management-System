@@ -50,4 +50,6 @@ public class UserService implements UserDetailsService {
         user.setRoles(List.of(roleService.getUserRole()));
         return userRepository.save(user);
     }
+
+
 }

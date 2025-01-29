@@ -2,24 +2,22 @@ package dev.api.converter;
 
 import dev.api.entity.Comment;
 import dev.api.web.dto.CommentDTO;
-import lombok.RequiredArgsConstructor;
-import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor
 public class CommentConverter {
 
-    private final ModelMapper modelMapper;
-
     public CommentDTO convertCommentToCommentDTO(Comment comment) {
-        CommentDTO commentDTO = modelMapper.map(comment, CommentDTO.class);
+        CommentDTO commentDTO = new CommentDTO();
+        commentDTO.setId(comment.getId());
+        commentDTO.setText(comment.getText());
         return commentDTO;
     }
 
     public Comment convertCommentDTOToComment(CommentDTO commentDTO) {
-        Comment comment = modelMapper.map(commentDTO, Comment.class);
+        Comment comment = new Comment();
+        comment.setId(commentDTO.getId());
+        comment.setText(commentDTO.getText());
         return comment;
     }
-
 }
