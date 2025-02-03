@@ -47,14 +47,14 @@ public class UserController {
     @GetMapping("/{id}/tasks")
     public List<TaskDTO> getTasksByUserId(@PathVariable Long id){
         List<Task> tasks = taskService.getAllByUserId(id);
-        return taskMapper.toDto(tasks);
+        return taskMapper.toDTOList(tasks);
     }
 
     @PostMapping("/{id}/tasks")
     public TaskDTO createTask(@PathVariable Long id,@Validated(OnCreate.class) @RequestBody TaskDTO dto){
         Task task = taskMapper.toEntity(dto);
         Task createTask = taskService.create(task, id);
-        return taskMapper.toDto(createTask);
+        return taskMapper.toDTO(createTask);
     }
 
 

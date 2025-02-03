@@ -22,13 +22,13 @@ public class TaskController {
     public TaskDTO update(@Validated(OnUpdate.class) @RequestBody TaskDTO taskDTO) {
         Task task = taskMapper.toEntity(taskDTO);
         Task updatedTask = taskService.update(task);
-        return taskMapper.toDto(updatedTask);
+        return taskMapper.toDTO(updatedTask);
     }
 
     @GetMapping("/{id}")
     public TaskDTO getById(@PathVariable Long id) {
         Task task = taskService.getById(id);
-        return taskMapper.toDto(task);
+        return taskMapper.toDTO(task);
     }
 
     @DeleteMapping("/{id}")
