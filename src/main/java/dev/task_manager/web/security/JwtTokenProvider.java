@@ -6,10 +6,15 @@ import dev.task_manager.model.user.User;
 import dev.task_manager.services.UserService;
 import dev.task_manager.services.props.JwtProperties;
 import dev.task_manager.web.dto.auth.JwtResponse;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
@@ -79,12 +84,46 @@ public class JwtTokenProvider {
 
     }
 
+    //Старое решение (временная затычка - не баг, а фига) надо будет поправить!!!
+    // Или не временная...
     public boolean validateToken(String token) {
-        {
-
-        }
+        Jws<Claims> claims = Jwts
+                .parser()
+                .setSigningKey(key)
+                .build()
+                .parseClaimsJws(token);
+        return !claims.getBody().getExpiration().before(new Date());
 
     }
 
+
+    public Authentication getAuthentication(String token){
+        String username = getUsername(token);
+        UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+        return new UsernamePasswordAuthenticationToken(userDetails,"", userDetails.getAuthorities());
+    }
+
+    private String getUsername(String token) {
+        return Jwts
+                .parser()
+                .setSigningKey(key)
+                .build()
+                .parseClaimsJws(token)
+                .getBody()
+                .getSubject();
+    }
+
+
+
+    private String getId(String token) {
+        return Jwts
+                .parser()
+                .setSigningKey(key)
+                .build()
+                .parseClaimsJws(token)
+                .getBody()
+                .get("id")
+                .toString();
+    }
 
 }

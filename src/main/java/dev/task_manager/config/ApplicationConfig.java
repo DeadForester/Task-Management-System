@@ -1,5 +1,7 @@
 package dev.task_manager.config;
 
+import dev.task_manager.web.security.JwtTokenFilter;
+import dev.task_manager.web.security.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -21,6 +23,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 public class ApplicationConfig {
 
+    private final JwtTokenProvider jwtTokenProvider;
     private final ApplicationContext applicationContext;
 
     @Bean
@@ -58,7 +61,7 @@ public class ApplicationConfig {
                         .requestMatchers("/api/v1/auth/**").permitAll()
                         .anyRequest().authenticated()
                 )
-                .addFilterBefore(new JwtTokenFilter(jwtTokenProvider, UsernamePasswordAuthenticationFilter.class))
+                .addFilterBefore(new JwtTokenFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 }
