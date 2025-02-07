@@ -2,13 +2,21 @@ package dev.task_manager.repository.impl;
 
 import dev.task_manager.model.user.Role;
 import dev.task_manager.model.user.User;
+import dev.task_manager.repository.DataSourceConfiguration;
 import dev.task_manager.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
+@RequiredArgsConstructor
 public class UserRepositoryImpl implements UserRepository {
+
+    private final DataSourceConfiguration dataSourceConfiguration;
+
+
+
     @Override
     public Optional<User> findById(Long id) {
         return Optional.empty();
