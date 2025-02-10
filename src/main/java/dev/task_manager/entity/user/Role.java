@@ -1,4 +1,4 @@
-package dev.task_manager.model.user;
+package dev.task_manager.entity.user;
 
 public enum Role {
 

@@ -1,6 +1,6 @@
 package dev.task_manager.web.security;
 
-import dev.task_manager.model.exception.ResourceNotFoundException;
+import dev.task_manager.entity.exception.ResourceNotFoundException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;

@@ -1,7 +1,7 @@
 package dev.task_manager.services.impl;
 
-import dev.task_manager.model.task.Status;
-import dev.task_manager.model.task.Task;
+import dev.task_manager.entity.task.Status;
+import dev.task_manager.entity.task.Task;
 import dev.task_manager.repository.TaskRepository;
 import dev.task_manager.services.TaskService;
 import lombok.RequiredArgsConstructor;

@@ -1,10 +1,9 @@
 package dev.task_manager.web.controller;
 
-import dev.task_manager.model.exception.AccessDeniedException;
-import dev.task_manager.model.exception.ExceptionBody;
-import dev.task_manager.model.exception.ResourceMappingException;
-import dev.task_manager.model.exception.ResourceNotFoundException;
-import jakarta.validation.ConstraintDeclarationException;
+import dev.task_manager.entity.exception.AccessDeniedException;
+import dev.task_manager.entity.exception.ExceptionBody;
+import dev.task_manager.entity.exception.ResourceMappingException;
+import dev.task_manager.entity.exception.ResourceNotFoundException;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;

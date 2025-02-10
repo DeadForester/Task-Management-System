@@ -1,6 +1,6 @@
 package dev.task_manager.web.mappers;
 
-import dev.task_manager.model.task.Task;
+import dev.task_manager.entity.task.Task;
 import dev.task_manager.web.dto.task.TaskDTO;
 import org.mapstruct.Mapper;
 

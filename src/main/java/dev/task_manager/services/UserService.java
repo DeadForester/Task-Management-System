@@ -1,6 +1,6 @@
 package dev.task_manager.services;
 
-import dev.task_manager.model.user.User;
+import dev.task_manager.entity.user.User;
 
 public interface UserService {
 

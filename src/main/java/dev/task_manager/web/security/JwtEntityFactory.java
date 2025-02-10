@@ -1,7 +1,7 @@
 package dev.task_manager.web.security;
 
-import dev.task_manager.model.user.Role;
-import dev.task_manager.model.user.User;
+import dev.task_manager.entity.user.Role;
+import dev.task_manager.entity.user.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 

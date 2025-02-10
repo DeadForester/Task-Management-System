@@ -1,7 +1,7 @@
 package dev.task_manager.web.controller;
 
-import dev.task_manager.model.task.Task;
-import dev.task_manager.model.user.User;
+import dev.task_manager.entity.task.Task;
+import dev.task_manager.entity.user.User;
 import dev.task_manager.services.TaskService;
 import dev.task_manager.services.UserService;
 import dev.task_manager.web.dto.task.TaskDTO;

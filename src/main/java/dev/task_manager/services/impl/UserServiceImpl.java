@@ -1,8 +1,8 @@
 package dev.task_manager.services.impl;
 
-import dev.task_manager.model.exception.ResourceNotFoundException;
-import dev.task_manager.model.user.Role;
-import dev.task_manager.model.user.User;
+import dev.task_manager.entity.exception.ResourceNotFoundException;
+import dev.task_manager.entity.user.Role;
+import dev.task_manager.entity.user.User;
 import dev.task_manager.repository.UserRepository;
 import dev.task_manager.services.UserService;
 import lombok.RequiredArgsConstructor;

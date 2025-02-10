@@ -1,6 +1,6 @@
-package dev.task_manager.model.user;
+package dev.task_manager.entity.user;
 
-import dev.task_manager.model.task.Task;
+import dev.task_manager.entity.task.Task;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,5 +28,4 @@ public class User {
     private Set<Role> roles;
 
     private List<Task> tasks;
-
 }

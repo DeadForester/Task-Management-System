@@ -1,6 +1,6 @@
 package dev.task_manager.services;
 
-import dev.task_manager.model.task.Task;
+import dev.task_manager.entity.task.Task;
 
 import java.util.List;
 

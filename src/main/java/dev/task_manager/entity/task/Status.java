@@ -1,4 +1,4 @@
-package dev.task_manager.model.task;
+package dev.task_manager.entity.task;
 
 public enum Status {
 

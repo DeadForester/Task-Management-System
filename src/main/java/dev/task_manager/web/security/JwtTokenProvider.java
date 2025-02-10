@@ -1,8 +1,8 @@
 package dev.task_manager.web.security;
 
-import dev.task_manager.model.exception.AccessDeniedException;
-import dev.task_manager.model.user.Role;
-import dev.task_manager.model.user.User;
+import dev.task_manager.entity.exception.AccessDeniedException;
+import dev.task_manager.entity.user.Role;
+import dev.task_manager.entity.user.User;
 import dev.task_manager.services.UserService;
 import dev.task_manager.services.props.JwtProperties;
 import dev.task_manager.web.dto.auth.JwtResponse;

@@ -1,8 +1,8 @@
 package dev.task_manager.repository.mappers;
 
-import dev.task_manager.model.task.Task;
-import dev.task_manager.model.user.Role;
-import dev.task_manager.model.user.User;
+import dev.task_manager.entity.task.Task;
+import dev.task_manager.entity.user.Role;
+import dev.task_manager.entity.user.User;
 import lombok.SneakyThrows;
 
 import java.sql.ResultSet;

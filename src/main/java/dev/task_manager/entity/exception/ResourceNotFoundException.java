@@ -1,4 +1,4 @@
-package dev.task_manager.model.exception;
+package dev.task_manager.entity.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
 

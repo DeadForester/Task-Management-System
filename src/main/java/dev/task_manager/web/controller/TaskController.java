@@ -1,6 +1,6 @@
 package dev.task_manager.web.controller;
 
-import dev.task_manager.model.task.Task;
+import dev.task_manager.entity.task.Task;
 import dev.task_manager.services.TaskService;
 import dev.task_manager.web.dto.task.TaskDTO;
 import dev.task_manager.web.dto.validation.OnUpdate;

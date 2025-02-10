@@ -1,7 +1,7 @@
 package dev.task_manager.repository;
 
-import dev.task_manager.model.user.Role;
-import dev.task_manager.model.user.User;
+import dev.task_manager.entity.user.Role;
+import dev.task_manager.entity.user.User;
 
 import java.util.Optional;
 

@@ -1,7 +1,7 @@
 package dev.task_manager.repository.impl;
 
-import dev.task_manager.model.exception.ResourceMappingException;
-import dev.task_manager.model.task.Task;
+import dev.task_manager.entity.exception.ResourceMappingException;
+import dev.task_manager.entity.task.Task;
 import dev.task_manager.repository.DataSourceConfiguration;
 import dev.task_manager.repository.TaskRepository;
 import dev.task_manager.repository.mappers.TaskRoleMapper;

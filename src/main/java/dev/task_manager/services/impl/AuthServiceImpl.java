@@ -1,6 +1,6 @@
 package dev.task_manager.services.impl;
 
-import dev.task_manager.model.user.User;
+import dev.task_manager.entity.user.User;
 import dev.task_manager.services.AuthService;
 import dev.task_manager.services.UserService;
 import dev.task_manager.web.dto.auth.JwtRequest;

@@ -2,7 +2,7 @@ package dev.task_manager.web.dto.task;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import dev.task_manager.model.task.Status;
+import dev.task_manager.entity.task.Status;
 import dev.task_manager.web.dto.validation.OnCreate;
 import dev.task_manager.web.dto.validation.OnUpdate;
 import jakarta.validation.constraints.NotNull;
